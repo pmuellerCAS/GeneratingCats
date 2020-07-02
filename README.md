@@ -1,4 +1,4 @@
-![](training.gif =10x10)
+![](training.gif)
 
 # GeneratingCats
 Generating cat faces with a GAN in Tensorflow
