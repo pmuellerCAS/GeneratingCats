@@ -1,6 +1,6 @@
 
 
-<img src="training.gif" width="100" height="100" />`
+<img src="training.gif" width="300" height="300" />`
 
 # GeneratingCats
 CAS ADS M3 Project Submission by Petra Müller, University Bern.
@@ -59,5 +59,21 @@ There are many ways to use this project for your own purposes. In the following 
 
 ### Running this example exactly like I did:
 
+**Training data** for this GAN project was obtained from [GitHub user Federico Ferlito (Ferlix)](https://github.com/Ferlix/Cat-faces-dataset). The dataset contains a collection of 29843 images of cat faces of size 64x64. 
+
+<img src="training_examples.png" width="300" height="300" />`
+
+If you want to use this dataset, I recommend downloading the [numpy binary file](https://github.com/pmuellerCAS/GeneratingCats/blob/master/training_data_64_64.npy) provided in this repository and then - if you are running the Jupyter Notebook on Google Colab - upload the file to your Google Drive and synchronise it with Colab. Adjust the path to the training data file in your copy of the Notebook accordingly. 
+
+```
+# load the binary file
+allcats = np.load('/your/path/to/data/input/training_data_64_64.npy')
+```
+Then simply follow the steps provided in the Notebook to run the training process. 
+
+### Training this GAN with your own training data:
+
+This GAN is in it's current state optimised and built to be trained on images of size 64x64x3. If your input data has a different shape, adjustments need to be made to the code accordingly. 
+It is recommended to store the training data in a numpy array binary file as this file format is more sparse and combines all the training images into 1 single file. 
 
 
