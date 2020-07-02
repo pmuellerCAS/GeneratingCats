@@ -1,4 +1,6 @@
-![](training.gif)
+
+
+<img src="training.gif" width="100" height="100" />`
 
 # GeneratingCats
 CAS ADS M3 Project Submission by Petra Müller, University Bern.
@@ -51,5 +53,11 @@ For further information about how to implement GAN's in Tensorflow and Python, p
 
 To further understand how my cat generator GAN was built, you may consult [my presentation](https://github.com/pmuellerCAS/GeneratingCats/blob/readme/MUELLER_GeneratingCats.pdf) of the project.
 
-## Running this example with your own training data
+## Usage
+
+There are many ways to use this project for your own purposes. In the following section, some recommendations and hints are given depending on selected use-cases. 
+
+### Running this example exactly like I did:
+
+
 
