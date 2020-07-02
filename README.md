@@ -91,7 +91,7 @@ np.save('/your/path/to/data/input/training_data_64_64.npy', allcatdata)         
 Then you can follow the steps in the Notebook and see how the model performs on your training data.
 
 ### Using this GAN as a pre-trained model
-If you want to skip the training process you may download model checkpoints provided in this repository. Due to file size limitations, only the 4 last checkpoints have been uploaded. If you want to start training the model from a checkpoint or generate a cat face with an already trained model, you need to restore the latest checkpoint by running
+If you want to skip the training process you may [download model checkpoints](https://github.com/pmuellerCAS/GeneratingCats/tree/master/model_checkpoints) provided in this repository. Due to repository size limitations, only the 4 last checkpoints have been uploaded. If you want to start training the model from a checkpoint or generate a cat face with an already trained model, you need to restore the latest checkpoint by running
 ```
 checkpoint.restore(tf.train.latest_checkpoint('/your/path/to/model/training_checkpoints/'))
 ```
@@ -117,4 +117,14 @@ For example, 100 generated cats like these:
 
 <img src="generated_cats.png" width="500" height="500" />`
 
+# HAVE FUN
+
+### Acknowledgements
+Thanks to
+- Federico Ferlito for the Dataset https://github.com/Ferlix/Cat-faces-dataset
+- Tensorflow for the intense tutorial on DCGANs https://www.tensorflow.org/tutorials/generative/dcgan
+- Jason Brownlee for wonderful insights on how to improve GAN performance https://machinelearningmastery.com/how-to-code-generative-adversarial-network-hacks/
+
+### License
+This project was published under the [MIT License](https://github.com/pmuellerCAS/GeneratingCats/blob/master/LICENSE)
 
