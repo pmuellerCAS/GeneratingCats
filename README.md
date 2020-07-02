@@ -61,6 +61,8 @@ There are many ways to use this project for your own purposes. In the following 
 
 **Training data** for this GAN project was obtained from [GitHub user Federico Ferlito (Ferlix)](https://github.com/Ferlix/Cat-faces-dataset). The dataset contains a collection of 29843 images of cat faces of size 64x64. 
 
+**Examples:**
+
 <img src="training_examples.png" width="500" height="500" />`
 
 If you want to use this dataset, I recommend downloading the [numpy binary file](https://github.com/pmuellerCAS/GeneratingCats/blob/master/training_data_64_64.npy) provided in this repository and then - if you are running the Jupyter Notebook on Google Colab - upload the file to your Google Drive and synchronise it with Colab. Adjust the path to the training data file in your copy of the Notebook accordingly. 
@@ -88,7 +90,31 @@ np.save('/your/path/to/data/input/training_data_64_64.npy', allcatdata)         
 ```
 Then you can follow the steps in the Notebook and see how the model performs on your training data.
 
-### Use this GAN as a pre-trained model
+### Using this GAN as a pre-trained model
+If you want to skip the training process you may download model checkpoints provided in this repository. Due to file size limitations, only the 4 last checkpoints have been uploaded. If you want to start training the model from a checkpoint or generate a cat face with an already trained model, you need to restore the latest checkpoint by running
+```
+checkpoint.restore(tf.train.latest_checkpoint('/your/path/to/model/training_checkpoints/'))
+```
+before you start additional training or generating cats. 
 
+### Generating Cats from noise
+
+Once you trained your model or restored the model from the latest checkpoint, you can use it to generate cat faces from noise. 
+To observe how my model performed over the epochs, I tested the model output with the same noise vector every time. 
+If you want to use the same noise vector as I did, you may [download it](https://github.com/pmuellerCAS/GeneratingCats/blob/master/noise_input.npy) from this repository. 
+To create your own noise input vector to test the model, simply run
+```
+NOISE_DIM = 128                                                                 # Length of the noise input vector
+N_TO_GENERATE = 9                                                               # how many cats you want to generate
+my_output_seed = tf.random.normal([N_TO_GENERATE, NOISE_DIM], seed = 1337)      # to generate the noise vector, specifying a seed is optional
+```
+And then use the provided function to generate cat images:
+This function will not train the model and always use the latest model state. 
+```
+GenerateShowSaveCatImages(cat_generator,epoch, my_output_seed)                  # note that Epoch only is specified to set the filename
+```
+For example, 100 generated cats like these:
+
+<img src="generated_cats.png" width="500" height="500" />`
 
 
